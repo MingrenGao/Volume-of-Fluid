@@ -73,8 +73,6 @@ At the **finest resolution**, the following diagnostic files are written:
 - `kappa_field.dat` — curvature field dump  
 - `phi_field.dat` — optional (for RDF methods)  
 - `interface_segments.dat` — reconstructed PLIC segments  
-- `alpha.ppm` — optional VOF visualization  
-- `curvature.ppm` — optional curvature visualization  
 
 ---
 
