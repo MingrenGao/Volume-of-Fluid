@@ -36,26 +36,25 @@ with known analytic curvature.
 ## Curvature Methods Implemented
 
 - **CV**  
-  Convolution-smoothed VOF + divergence of normals  
+  Convolved VOF method
 
-- **RDF_raw / RDF_smooth**  
-  Reconstructed distance function (raw or smoothed) + level-set curvature  
+- **RDF**  
+  Reconstructed distance function method
 
 - **PARABOLOID**  
-  Local height-function / parabola reconstruction (paper-aligned)  
+  Parabolic reconstruction
 
 - **HF**  
-  Height-function curvature  
-  (for cosine interfaces, full-column HF is used for stability)
+  Height-function method
 
 - **VFM**  
-  Volume-fraction matching using LM optimization in the local tangent–normal frame  
+  Volumetric fitting method
 
 - **PC**  
-  Parabola fit based on PLIC-segment centroids  
+  PLIC-centroidal fitting method
 
 - **PV**  
-  Parabola fit using PLIC-segment moments (PV variant)
+  PLIC-volumetric fitting method
 
 ---
 
