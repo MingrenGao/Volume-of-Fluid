@@ -1,13 +1,21 @@
 # Volume-of-Fluid
 
-# Curvature Convergence Testbed (VOF, 2D)
-
 A standalone C++ test program to study **curvature accuracy and grid convergence** for 2D interfaces represented by **VOF (Volume of Fluid)** on a Cartesian grid.
 
 It supports two analytic interface shapes:
 
-- **circle**: constant exact curvature \( \kappa = 1/R \)
-- **cosine**: \( y(x) = A - \cos\left(2\pi n x/L\right) \) with analytic curvature
+- **circle**: constant exact curvature  
+
+  $$
+  \kappa = \frac{1}{R}
+  $$
+
+- **cosine**:  
+
+  $$
+  y(x) = A - \cos\left( \frac{2\pi n x}{L} \right)
+  $$
+
 
 Curvature methods implemented:
 
