@@ -1,0 +1,112 @@
+# ============================================================
+# 0) GLOBAL / COMMON
+# ============================================================
+
+# ---- Domain ----
+geometry.prob_lo = 0.0 0.0
+geometry.prob_hi = 8.0 8.0
+
+# ---- Grid ----
+#amr.n_cell = 20 20
+amr.n_list = 20 40 80 120 160
+
+# ---- Initial interface shape ----
+ic.shape = cosine
+
+# circle (used only when ic.shape = circle)
+circle.R      = 0.25
+circle.center = 0.5 0.5
+
+# cosine (used only when ic.shape = cosine)
+# y(x) = A - cos( 2*pi*n_periods*x/L )
+cosine.A         = 3.0
+cosine.L         = 8.0
+cosine.n_periods = 1
+
+
+# ---- Interface-cell threshold ----
+error.eps_if = 1e-5
+
+
+# ============================================================
+# 1) VOF INITIALIZATION
+# ============================================================
+
+vof.refine_max_level = 4
+
+# recursive / exact_poly (circle ONLY)
+vof.init_method = recursive
+hf.Ntheta = 720
+
+
+# ============================================================
+# 2) CURVATURE METHOD (SELECT ONE)
+# ============================================================
+
+# CV / RDF_raw / RDF_smooth / PARABOLOID / HF / VFM / PC / PV 
+curv.method = PARABOLOID
+
+# ============================================================
+# 3) CV PARAMETERS
+# ============================================================
+
+curv.h_factor = 4.0
+
+
+# ============================================================
+# 4) RDF PARAMETERS
+# ============================================================
+
+rdf.grad_stencil = 9pt
+
+# RDF weights
+rdf.A = 25.0
+rdf.B = 0.001
+
+# neighborhood radius for RDF (cells)
+rdf.rad_cells = 5
+
+
+# ============================================================
+# 5) PARABOLOID / LOCAL-HF PARAMETERS
+# ============================================================
+
+# column length = 2*hf.m+1
+hf.m = 4
+
+
+# ============================================================
+# 6) VFM PARAMETERS
+# ============================================================
+
+vfm.stencil = 7
+vfm.weight_radius_factor = 3.5
+vfm.maxIters = 80
+vfm.tolRel   = 1e-12
+vfm.lambda0    = 1e-3
+vfm.lambdaUp   = 10.0
+vfm.lambdaDown = 0.3
+vfm.fdEps = 1e-6
+
+
+# ============================================================
+# 7) PC PARAMETERS (only used if curv.method = PC)
+# ============================================================
+
+pc.stencil   = 7
+pc.d_over_dx = 3.0
+
+# ============================================================
+# 8) PV PARAMETERS (only used if curv.method = PV)
+# ============================================================
+
+pv.stencil   = 9
+pv.d_over_dx = 3
+pv.use_area_align_weight = 0
+
+
+# ============================================================
+# 7) OUTPUT
+# ============================================================
+
+dump.ppm = 0
