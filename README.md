@@ -5,16 +5,11 @@ A standalone C++ test program to study **curvature accuracy and grid convergence
 It supports two analytic interface shapes:
 
 - **circle**: constant exact curvature  
-
-  $$
-  \kappa = \frac{1}{R}
-  $$
+  \(\kappa = 1/R\)
 
 - **cosine**:  
+  \( y(x) = A - \cos\left(2\pi n x/L\right) \)
 
-  $$
-  y(x) = A - \cos\left( \frac{2\pi n x}{L} \right)
-  $$
 
 
 Curvature methods implemented:
