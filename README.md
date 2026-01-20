@@ -81,5 +81,5 @@ At the **finest resolution**, the following diagnostic files are written:
 ### Build (g++)
 
 ```bash
-g++ -O3 -std=c++17 curvature_convergence_paraboloid_fixed.cpp -o curv_test
-./curv_test curv.inp
+g++ -O3 -std=c++17 -Wall -Wextra -pedantic VOF.cpp -o curv
+./curv cur.inp
